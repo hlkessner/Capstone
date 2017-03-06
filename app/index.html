@@ -6,6 +6,7 @@
   <title>Capstone</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Just+Me+Again+Down+Here" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Sue+Ellen+Francisco" rel="stylesheet">
   <link rel="shortcut icon" href="/favicon.ico">
@@ -33,15 +34,15 @@
 
   <div class="container">
     <div class="header">
-      <h3 class="text-muted">CatMatcher</h3>
+      <h1 class="text-muted">CatMatcher</h1>
     </div>
     <div id="form" class="collapse in">
       <form>
         <label>First Name:</label><br>
-        <input type="text" name="firstname"> <br>
+        <input type="text" name="firstname" required> <br>
         <label>What is your sign?</label><br>
         <input list="signs">
-        <datalist id="signs">
+        <datalist id="signs" required>
             <option value="Aquarius">
             <option value="Pisces">
             <option value="Aries">
@@ -56,11 +57,11 @@
             <option value="Capricorn">
         </datalist><br>
         <label>Do you like long walks on the beach?</label><br>
-        <input type="checkbox"> Yes <br>
-        <input type="checkbox"> No <br>
+        <input type="checkbox" name="checkbox"> Yes <br>
+        <input type="checkbox" name="checkbox"> No <br>
         <label>What is your favorite color?</label><br>
         <input list="color"><br>
-        <datalist id="color">
+        <datalist id="color" name="datalist" required>
             <option value="Red">
             <option value="Blue">
             <option value="Yellow">
@@ -73,19 +74,22 @@
         </datalist><br>
       </input>
       <label>Do you think UFOs are real?</label><br>
-      <input type="checkbox"> Yes <br>
-      <input type="checkbox"> No <br>
-      <label>Boxers or Breifs?</label><br>
-      <input type="checkbox"> Boxers <br>
-      <input type="checkbox"> Breifs <br>
+      <input type="checkbox" name="checkbox"> Yes <br>
+      <input type="checkbox" name="checkbox"> No <br>
+      <label>Boxers or Briefs?</label><br>
+      <input type="checkbox" name="checkbox"> Boxers <br>
+      <input type="checkbox" name="checkbox"> Briefs <br>
+      <button type="button" id="match" class="btn btn-info" data-toggle="collapse" data-target="#form" aria-expanded="false" aria-controls="#form">Find me a match!</button>
      </form>
-     <button type="button" onclick="pet()" class="btn btn-info" data-toggle="collapse" data-target="#form"aria-expanded="false" aria-controls="#form">Find me a match!</button>
+
+
   </div>
 </div>
-<div>
-<div id="petfinderInfo">
-  <button>Adopt Me!</button>
-</div>
+<div id="pet" style="display: none">
+  <h3>It's a match!</h3>
+  <h2>Meet:</h2>
+  <p id="petfinderInfo">
+  <button type="button" class="btn btn-info">Adopt Me!</button>
 </div>
   <div class="footer">
 
